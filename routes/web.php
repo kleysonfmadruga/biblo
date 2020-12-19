@@ -1,0 +1,170 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::prefix('/admin')->group(function() {
+    Route::get('/index', function() {
+        return 'Admin listing route';
+    });
+
+    Route::get('/show/{id}', function($id){
+        return "Admin get by id = ${id} route";
+    });
+
+    Route::get('/new', function() {
+        return 'Admin creation route';
+    });
+    
+    Route::post('/store', function(Request $request) {
+        return 'Admin store route';
+    });
+
+    Route::put('/update/{id}', function($id) {
+        return "Admin update by id = ${id} route";
+    });
+
+    Route::delete('remove/{id}',function($id){
+        return "Admin remove by id = ${id} route";
+    });
+
+    Route::prefix('/categories')->group(function(){
+        Route::get('/index', function() {
+            return "Categories listing route";
+        });
+
+        Route::get('/show/{id}', function($id){
+            return "Show category and its books route";
+        });
+
+        Route::post('/store', function() {
+            return "Store category route";
+        });
+
+        Route::put('/update/{id}', function($id) {
+            return "Update category by id ${id}";
+        });
+
+        Route::delete('/delete/{id}', function($id) {
+            return "Delete category by id ${id}";
+        });
+    });
+
+    Route::prefix('/users')->group(function() {
+        Route::get('/index', function() {
+            return 'User listing route';
+        });
+    
+        Route::get('/show/{id}', function($id){
+            return "User get by id = ${id} route";
+        });
+
+        Route::post('/show/{id}/store_borrowing', function($id) {
+            return "Store new user borrowing by id ${id}";
+        });
+
+        Route::put('/show/{id}/renew_borrowing/{borrowing_id}', function($id, $borrowing_id) {
+            return "Update user borrowing by id ${id} and borrowing_id ${borrowing_id}";
+        });
+
+        Route::delete('/show/{id}/delete_borrowing/{borrowing_id}', function($id, $borrowing_id) {
+            return "Delete user borrowing by id ${id} and borrowing_id ${borrowing_id}";
+        });
+    
+        Route::get('/new', function() {
+            return 'User creation route';
+        });
+        
+        Route::post('/store', function() {
+            return 'User store route';
+        });
+    
+        Route::put('/update/{id}', function($id) {
+            return "User update by id = ${id} route";
+        });
+    
+        Route::delete('remove/{id}',function($id){
+            return "User remove by id = ${id} route";
+        });
+
+    });
+
+    Route::prefix('/books')->group(function() {
+        Route::get('/index', function() {
+            return 'Books listing route';
+        });
+    
+        Route::get('/show/{isbn}', function($isbn){
+            return "Books get by isbn = ${isbn} route";
+        });        
+        
+        Route::post('/show/{isbn}/store_copy/', function($isbn){
+            return "Store copy ${isbn} route";
+        });
+    
+        Route::delete('show/{isbn}/remove_copy/{code}', function($isbn, $code){
+            return "Remove copy ${isbn}-${code} route";
+        });
+    
+        Route::get('/new', function() {
+            return 'Books creation route';
+        });
+        
+        Route::post('/store', function() {
+            return 'Books store route';
+        });
+        
+        Route::put('/update/{isbn}', function($isbn) {
+            return "Books update by isbn = ${isbn} route";
+        });
+    
+        Route::delete('remove/{isbn}',function($isbn){
+            return "Books remove by isbn = ${isbn} route";
+        });
+
+    });
+
+    Route::prefix('/books')->group(function() {
+        Route::get('/index', function() {
+            return "Index Biblo's page";
+        });
+
+        Route::post('/list', function(Request $request) {
+            return "Searching books by name ".$request->input('name');
+        });
+
+        Route::get('/show/{isbn}', function($isbn) {
+            return "Showing book by isbn ${isbn}";
+        });
+
+        Route::post('show/{isbn}/request_borrowing', function($isbn){
+            return "Requesting borrowing of book by isbn ${isbn}";
+        });
+    });
+
+    Route::prefix('/profile')->group(function() {
+        Route::get('/show/{id}', function($id) {
+            return "Show profile route";
+        });
+
+        Route::put('/update/{id}', function($id) {
+            return "Update profile route";
+        });
+
+        Route::post('/delete', function($id) {
+            return "Delete profile route";
+        });
+
+    });
+
+});
