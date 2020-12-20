@@ -63,19 +63,7 @@ Route::prefix('/admin')->group(function() {
         Route::delete('/show/{id}/delete_borrowing/{borrowing_id}', function($id, $borrowing_id) {
             return "Delete user borrowing by id ${id} and borrowing_id ${borrowing_id}";
         });
-    
-        Route::get('/new', function() {
-            return 'User creation route';
-        });
         
-        Route::post('/store', function() {
-            return 'User store route';
-        });
-    
-        Route::put('/update/{id}', function($id) {
-            return "User update by id = ${id} route";
-        });
-    
         Route::delete('remove/{id}',function($id){
             return "User remove by id = ${id} route";
         });
@@ -93,6 +81,10 @@ Route::prefix('/admin')->group(function() {
         
         Route::post('/show/{isbn}/store_copy/', function($isbn){
             return "Store copy ${isbn} route";
+        });
+
+        Route::post('show/{isbn}/request_borrowing', function($isbn){
+            return "Requesting borrowing of book by isbn ${isbn}";
         });
     
         Route::delete('show/{isbn}/remove_copy/{code}', function($isbn, $code){
@@ -135,19 +127,31 @@ Route::prefix('/books')->group(function() {
     Route::post('show/{isbn}/request_borrowing', function($isbn){
         return "Requesting borrowing of book by isbn ${isbn}";
     });
+
+    Route::put('/show/{isbn}/renew_borrowing/{borrowing_id}', function($isbn, $borrowing_id) {
+        return "Update user borrowing by isbn ${isbn} and borrowing_id ${borrowing_id}";
+    });
 });
 
 Route::prefix('/profile')->group(function() {
     Route::get('/show/{id}', function($id) {
         return "Show profile route";
     });
-
-    Route::put('/update/{id}', function($id) {
-        return "Update profile route";
+    
+    Route::delete('show/{id}/delete',function($id){
+        return "User remove by id = ${id} route";
     });
 
-    Route::post('/delete', function($id) {
-        return "Delete profile route";
+    Route::get('/new', function() {
+        return 'User creation route';
+    });
+    
+    Route::post('/store', function() {
+        return 'User store route';
+    });
+
+    Route::put('/show/{id}/update', function($id) {
+        return "User update by id = ${id} route";
     });
 
 });
