@@ -18,29 +18,8 @@ Route::get('/', function() {
 })->name('home');
 
 Route::prefix('/admin')->group(function() {
-    Route::get('/index', function() {
-        return 'Admin listing route';
-    });
-
-    Route::get('/show/{id}', function($id){
-        return "Admin get by id = ${id} route";
-    });
-
-    Route::get('/new', function() {
-        return 'Admin creation route';
-    });
     
-    Route::post('/store', function(Request $request) {
-        return 'Admin store route';
-    });
-
-    Route::put('/update/{id}', function($id) {
-        return "Admin update by id = ${id} route";
-    });
-
-    Route::delete('remove/{id}',function($id){
-        return "Admin remove by id = ${id} route";
-    });
+    // For security, library administrators must contact the Biblo's support team to create, update or delete their accounts.
 
     Route::prefix('/categories')->group(function(){
         Route::get('/index', function() {
