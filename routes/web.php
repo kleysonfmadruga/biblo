@@ -143,7 +143,7 @@ Route::prefix('/profile')->group(function() {
     });
 
     Route::get('/new', function() {
-        return 'User creation route';
+        return view('signup');
     })->name('new_profile');
     
     Route::post('/store', function() {
