@@ -144,11 +144,11 @@ Route::prefix('/profile')->group(function() {
 
     Route::get('/new', function() {
         return 'User creation route';
-    });
+    })->name('new_profile');
     
     Route::post('/store', function() {
         return 'User store route';
-    });
+    })->name('store_profile');
 
     Route::put('/show/{id}/update', function($id) {
         return "User update by id = ${id} route";
