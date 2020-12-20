@@ -138,37 +138,37 @@ Route::prefix('/admin')->group(function() {
 
     });
 
-    Route::prefix('/books')->group(function() {
-        Route::get('/index', function() {
-            return "Index Biblo's page";
-        });
+});
 
-        Route::post('/list', function(Request $request) {
-            return "Searching books by name ".$request->input('name');
-        });
-
-        Route::get('/show/{isbn}', function($isbn) {
-            return "Showing book by isbn ${isbn}";
-        });
-
-        Route::post('show/{isbn}/request_borrowing', function($isbn){
-            return "Requesting borrowing of book by isbn ${isbn}";
-        });
+Route::prefix('/books')->group(function() {
+    Route::get('/index', function() {
+        return "Index Biblo's page";
     });
 
-    Route::prefix('/profile')->group(function() {
-        Route::get('/show/{id}', function($id) {
-            return "Show profile route";
-        });
+    Route::post('/list', function(Request $request) {
+        return "Searching books by name ".$request->input('name');
+    });
 
-        Route::put('/update/{id}', function($id) {
-            return "Update profile route";
-        });
+    Route::get('/show/{isbn}', function($isbn) {
+        return "Showing book by isbn ${isbn}";
+    });
 
-        Route::post('/delete', function($id) {
-            return "Delete profile route";
-        });
+    Route::post('show/{isbn}/request_borrowing', function($isbn){
+        return "Requesting borrowing of book by isbn ${isbn}";
+    });
+});
 
+Route::prefix('/profile')->group(function() {
+    Route::get('/show/{id}', function($id) {
+        return "Show profile route";
+    });
+
+    Route::put('/update/{id}', function($id) {
+        return "Update profile route";
+    });
+
+    Route::post('/delete', function($id) {
+        return "Delete profile route";
     });
 
 });
