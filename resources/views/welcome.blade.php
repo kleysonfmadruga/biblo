@@ -29,7 +29,7 @@
                     <input type="submit" value="Entrar" class="w-64 h-8 bg-blue-800 text-white font-bold rounded-md focus:outline-none hover:bg-blue-900 cursor-pointer">
                     <hr class="h-1 border-gray-400 w-48 my-6"/>
                     <p class="text-sm">O quê? Ainda não possui uma? &#x1F631;</p>
-                    <p class="text-sm">Crie uma por <a href="#" class="text-blue-600 hover:underline">aqui</a>.</p>
+                    <p class="text-sm">Crie uma por <a href="{{ route('new_profile') }}" class="text-blue-600 hover:underline">aqui</a>.</p>
                 </form>
             </aside>
         </div>
