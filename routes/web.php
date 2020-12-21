@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -142,16 +142,14 @@ Route::prefix('/profile')->group(function() {
         return "User remove by id = ${id} route";
     });
 
-    Route::get('/new', function() {
-        return view('signup');
-    })->name('new_profile');
+    Route::get('/new', [UserController::class, 'create'])->name('profile.new');
     
-    Route::post('/store', function() {
-        return 'User store route';
-    })->name('store_profile');
+    Route::post('/store', [UserController::class, 'store'])->name('profile.store');
 
     Route::put('/show/{id}/update', function($id) {
         return "User update by id = ${id} route";
     });
+
+    Route::post('/auth', [UserController::class, 'auth'])->name('profile.login');
 
 });
