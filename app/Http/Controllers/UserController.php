@@ -17,8 +17,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('index');
+    {   
+        $user = Auth::user();
+        return view('index', array('user' => $user));
     }
 
     public function auth(Request $request){
