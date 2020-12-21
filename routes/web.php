@@ -18,9 +18,7 @@ Route::get('/', function() {
 })->name('login');
 
 Route::middleware(['auth'])->group(function() {
-    Route::get('/index', function() {
-        return "Index Biblo's page";
-    })->name('index');    
+    Route::get('/index', [UserController::class, 'index'])->name('index');    
 });
 
 Route::prefix('/admin')->group(function() {
