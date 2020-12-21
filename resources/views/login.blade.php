@@ -19,7 +19,7 @@
             </main>
 
             <aside class="w-4/12 mx-4">
-                <form action="{{route('profile.login')}}" method="post" class=" rounded-lg flex flex-col px-8 py-16 items-center shadow-lg bg-white">
+                <form action="{{route('profile.auth')}}" method="post" class=" rounded-lg flex flex-col px-8 py-16 items-center shadow-lg bg-white">
                     @csrf
                     <label for="email" class="w-64 h-8 text-lg">E-mail</label>
                     <input type="email" name="email" id="email" class="border-2 bg-gray-100 rounded-md w-64 h-8 px-1 text-base focus:outline-none focus:border-gray-400 focus:bg-white">
