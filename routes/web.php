@@ -17,6 +17,10 @@ Route::get('/', function() {
     return view('welcome');
 })->name('home');
 
+Route::get('/index', function() {
+    return "Index Biblo's page";
+})->name('index');
+
 Route::prefix('/admin')->group(function() {
     
     // For security, library administrators must contact the Biblo's support team to create, update or delete their accounts.
@@ -112,10 +116,6 @@ Route::prefix('/admin')->group(function() {
 });
 
 Route::prefix('/books')->group(function() {
-    Route::get('/index', function() {
-        return "Index Biblo's page";
-    });
-
     Route::post('/list', function(Request $request) {
         return "Searching books by name ".$request->input('name');
     });
