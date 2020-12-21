@@ -98,7 +98,7 @@ class UserController extends Controller
             'photo' => storage_path('profile_img/generic-avatar.png'),
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 
     /**
