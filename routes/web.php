@@ -154,4 +154,6 @@ Route::prefix('/profile')->group(function() {
 
     Route::post('/auth', [UserController::class, 'auth'])->name('profile.auth');
 
+    Route::post('/logout', [UserController::class, 'logout'])->name('profile.logout')->middleware('auth');
+
 });
