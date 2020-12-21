@@ -37,7 +37,7 @@
       <input type="submit" value="Cadastrar" class="w-64 h-8 bg-blue-800 text-white font-bold rounded-md focus:outline-none hover:bg-blue-900 cursor-pointer mt-6"/>
       
       <hr class="h-1 border-gray-400 w-48 my-6"/>
-      <p class="text-sm">Já possui uma conta? Entre por <a href="{{route('home')}}" class="text-blue-600 hover:underline">aqui</a>. &#x1F601;</p>
+      <p class="text-sm">Já possui uma conta? Entre por <a href="{{route('login')}}" class="text-blue-600 hover:underline">aqui</a>. &#x1F601;</p>
 
     </form>
   </div>
