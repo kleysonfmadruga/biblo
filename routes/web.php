@@ -14,12 +14,14 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function() {
-    return view('welcome');
-})->name('home');
+    return view('login');
+})->name('login');
 
-Route::get('/index', function() {
-    return "Index Biblo's page";
-})->name('index');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/index', function() {
+        return "Index Biblo's page";
+    })->name('index');    
+});
 
 Route::prefix('/admin')->group(function() {
     
@@ -136,11 +138,11 @@ Route::prefix('/books')->group(function() {
 Route::prefix('/profile')->group(function() {
     Route::get('/show/{id}', function($id) {
         return "Show profile route";
-    });
+    })->middleware(['auth']);
     
     Route::delete('show/{id}/delete',function($id){
         return "User remove by id = ${id} route";
-    });
+    })->middleware(['auth']);
 
     Route::get('/new', [UserController::class, 'create'])->name('profile.new');
     
@@ -148,8 +150,8 @@ Route::prefix('/profile')->group(function() {
 
     Route::put('/show/{id}/update', function($id) {
         return "User update by id = ${id} route";
-    });
+    })->middleware(['auth']);
 
-    Route::post('/auth', [UserController::class, 'auth'])->name('profile.login');
+    Route::post('/auth', [UserController::class, 'auth'])->name('profile.auth');
 
 });
