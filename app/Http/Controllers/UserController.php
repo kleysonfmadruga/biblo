@@ -96,7 +96,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->passwd),
-            'photo' => storage_path('profile_img/generic-avatar.png'),
+            'photo' => url('storage/profile_img/generic-avatar.png'),
         ]);
 
         return redirect()->route('login');
