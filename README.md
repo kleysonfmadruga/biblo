@@ -47,6 +47,9 @@ $ php artisan key:generate
 # Execute as migrações para criar as tabelas no banco de dados
 $ php artisan migrate
 
+# Crie um link simbólico da pasta storages para a pasta public para torná-la pública
+$ php artisan storage:link
+
 # Inicie o servidor
 $ php artisan serve
 
