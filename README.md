@@ -18,7 +18,7 @@ O projeto foi construido utilizando as seguintes ferramentas e tecnologias:
 
 ### Pré-requisitos
 
-Antes de começar, é necessário que você tenha o [PHP](https://www.php.net/), o [Git](https://git-scm.com/), o [Composer](https://getcomposer.org/) e o [MySQL](https://www.mysql.com/) instalados na sua máquina. Além disso, é preciso que haja um banco de dados chamado 'laravel' no servidor de banco de dados MySQL. Para fazer alterações no projeto, recomendo a utilização de algum editor de código, como o [VSCode](https://code.visualstudio.com/)
+Antes de começar, é necessário que você tenha o [PHP](https://www.php.net/), o [Git](https://git-scm.com/), o [Composer](https://getcomposer.org/) e o [MySQL](https://www.mysql.com/) instalados na sua máquina. Além disso, é preciso que haja um banco de dados chamado 'laravel' no servidor de banco de dados MySQL (o nome pode ser alterado configurando as variáveis de ambiente definidas no arquivo .env. Para fazer alterações no projeto, recomendo a utilização de algum editor de código, como o [VSCode](https://code.visualstudio.com/)
 
 ### Rodando a aplicação
 
