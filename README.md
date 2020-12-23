@@ -13,12 +13,13 @@ O projeto foi construido utilizando as seguintes ferramentas e tecnologias:
 - [Laravel](https://laravel.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [MySQL](https://www.mysql.com/)
+- [npm](https://www.npmjs.com/)
 
 ## Testando localmente
 
 ### Pré-requisitos
 
-Antes de começar, é necessário que você tenha o [PHP](https://www.php.net/), o [Git](https://git-scm.com/), o [Composer](https://getcomposer.org/) e o [MySQL](https://www.mysql.com/) instalados na sua máquina. Além disso, é preciso que haja um banco de dados chamado 'laravel' no servidor de banco de dados MySQL (o nome do banco de dados a ser utilizado pode ser alterado substituindo o valor da variável de ambiente DB_DATABASE definida no arquivo .env). Para fazer alterações no projeto, recomendo a utilização de algum editor de código, como o [VSCode](https://code.visualstudio.com/)
+Antes de começar, é necessário que você tenha o [PHP](https://www.php.net/), o [Git](https://git-scm.com/), o [Composer](https://getcomposer.org/), o [MySQL](https://www.mysql.com/) e o [npm](https://www.npmjs.com/) instalados na sua máquina. Além disso, é preciso que haja um banco de dados chamado 'laravel' no servidor de banco de dados MySQL (o nome do banco de dados a ser utilizado pode ser alterado substituindo o valor da variável de ambiente DB_DATABASE definida no arquivo .env). Para fazer alterações no projeto, recomendo a utilização de algum editor de código, como o [VSCode](https://code.visualstudio.com/)
 
 ### Rodando a aplicação
 
