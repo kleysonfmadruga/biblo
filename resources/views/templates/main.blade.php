@@ -8,7 +8,7 @@
   @yield('page-name')
 
 </head>
-<body>
+<body class="{{ env("APP_DEBUG") ? 'debug-screens' : '' }}">
   <div class="w-full bg-gray-100 flex flex-col items-center">
 
     <header class="w-full h-12 bg-blue-800 flex flex-row items-center justify-between">
@@ -18,7 +18,7 @@
       <div id="profile-dropdown" class="w-3/12 h-full relative inline-block">
         <button onclick="toggleDropdownVisibilityHandler()" id="profile-dropdown-button" class="hover:bg-blue-900 font-bold text-white text-lg w-full h-full flex flex-row justify-end items-center focus:outline-none">
           <p class="">{{$user->name}}</p>
-          <img src="{{$user->photo}}" alt="a" class="rounded-full w-8 mx-5 my-2" />
+          <img src="{{url($user->photo)}}" alt="a" class="rounded-full w-8 mx-5 my-2" />
         </button>
         <div id="profile-dropdown-content" class="absolute mx-10 z-10 rounded-b-lg bg-white shadow-sm w-64 pb-2 flex-col hidden">
           <a href="#" class="py-2 px-4 w-full hover:bg-gray-200">Meu perfil</a>
@@ -32,7 +32,7 @@
       </div>
     </header>
 
-    <main class="w-10/12 h-screen">
+    <main class="w-10/12">
       @yield('main')
     </main>
 
